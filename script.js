@@ -4,7 +4,7 @@ let output = document.querySelector('#output')
 let btn = document.querySelector('#btn')
 btn.addEventListener('click',(e)=>{
 	e.preventDefault()
-	let text = textbox.value
+	let text = parseFloat(textbox.value)
 	function updateTask(task, time){
         return new Promise((resolve, reject)=>{
             setTimeout(()=>{
@@ -30,7 +30,7 @@ btn.addEventListener('click',(e)=>{
         return updateTask(data+10, 1000)
     })
     .then(data =>{
-        output.innerText = 'Result: '+data
+        output.innerText = 'Final Result: '+data
     })
     .catch(err => {console.log(err)})
 })
